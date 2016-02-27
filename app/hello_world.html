@@ -1,0 +1,19 @@
+<!--
+	hello_world.html is a template file, called at templateURL, that has been defined 
+	by the @Component decorator in the hello_world.ts file. It will be injected into the 
+	HTML tag defined in the selector keyword and replace the contents of the DOM element.
+
+	Initially the index.html file had <hello-world>Loading...</hello-world> in the body.
+ 
+	data-bind to the input element; store value the user types 
+	into our app's model in the variable called yourName
+s-->
+<input type="text" [(ngModel)]="yourName" placeholder="Enter a name here">
+<hr>
+<!--
+	Conditionally display `yourName`, meaning if the model's variable is
+	not defined, then the h1 tag will have the "hidden" attribute. Otherwise
+	the value of the yourName variable (i.e. what the user typed in the
+	input box above will be displayed next to the literal "Hello" 
+-->
+<h1 [hidden]="!yourName">Hello {{yourName}}!</h1>

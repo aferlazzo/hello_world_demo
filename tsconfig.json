@@ -1,0 +1,64 @@
+/*
+	tsconfig.json is the config file for the typescript compiler. Modern browsers do 
+	not presently support TypeScript, which is a variation of ES6/ES2015. We must compile, 
+	or more correctly, transpile, TypeScript into something the browser will understand.
+	
+	Here's a description of compiler options being used with Angular 2:
+	
+	"target": "ES5" 
+		This option tells the compiler we want it to output ES5 code, ECMAScript 5 known as 
+		Javascript, which modern browsers understand.
+					
+	"module": "system" 
+		The output for modules varies depending on the compiler's intended use, the module
+		code generation: 'commonjs', 'amd', 'system', 'umd', or 'es2015' are all valid choices.
+		
+	"moduleResolution": "node"
+		 This option determines how modules get resolved. Either 'node' for Node.js/io.js style 
+		 resolution, or 'classic' (default).
+		 
+	"sourceMap": true, means generate a corresponding '.map' file.
+
+	"emitDecoratorMetadata": true
+			Emit design-type metadata for decorated declarations in source.
+			Decorators can be spotted with the @ prefix. Here are 3 that I've seen.
+			
+			@Component decorator is where metadata for the selector the app is using and
+			the html template to inject at that point in the html code.
+			
+			@Directive decorator specifies the selector identifying the attribute associated with the directive.
+			
+			@Input decorator adds metadata to a class that makes a property available for property binding.
+			
+
+	"experimentalDecorators": true
+			Enables experimental support for ES7 decorators
+
+	"removeComments": false
+			Don't remove comments in the source
+			If true, remove all comments except copy-right header comments beginning with /!*
+
+	"noImplicitAny": false
+		 If true, raise error on expressions and declarations with an implied 'any' type.
+		 
+	"exclude": ["node_modules"]
+		The compiler looks at a directory where it is being run and attempts to compile all *.ts files.
+		The "exclude" section is instructing the compiler to skip files in the array of subdirectory
+		names. Here, only the "node_modules" directory will be excluded.
+		
+*/
+{
+  "compilerOptions": {
+	"target": "ES5",
+	"module": "system",
+	"moduleResolution": "node",
+	"sourceMap": true,
+	"emitDecoratorMetadata": true,
+	"experimentalDecorators": true,
+	"removeComments": false,
+	"noImplicitAny": false
+  },
+  "exclude": [
+	"node_modules"
+  ]
+}
